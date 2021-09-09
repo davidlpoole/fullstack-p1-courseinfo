@@ -27,27 +27,31 @@ const App = () => {
     }
 
   const Part = (props) => {
+    const name = props.part.name
+    const exercises = props.part.exercises
       return (
         <p>
-          {props.part.name} {props.part.exercises}
+          {name} {exercises}
         </p>
       )
     }
 
   const Content = (props) => {
+    const parts = props.parts
       return (
         <>
-          <Part part={props.parts[0]} />
-          <Part part={props.parts[1]} />
-          <Part part={props.parts[2]} />
+          <Part part={parts[0]} />
+          <Part part={parts[1]} />
+          <Part part={parts[2]} />
         </>
       )
     }
 
   const Total = (props) => {
+    const parts = props.parts
       return (
         <p>
-          Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}
+          Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}
         </p>
       )
     }
